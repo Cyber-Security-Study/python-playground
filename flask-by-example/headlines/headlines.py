@@ -4,9 +4,10 @@
     Flask by example
 """
 
+import datetime
 import feedparser
 import requests
-from flask import Flask, render_template, request
+from flask import Flask, make_response, render_template, request
 
 app = Flask(__name__)
 
@@ -26,21 +27,34 @@ DEFAULTS = {
 
 @app.route('/')
 def home():
-    # get customized headlines, based on user input or default
-    publication = request.args.get('publication')
-    if not publication:
-        publication = DEFAULTS['publication']
+    # get customized headlines:
+    publication = get_value_with_fallback("publication")
     articles = get_news(publication)
-    # get customized weather based on user input or default
-    city = request.args.get('city')
-    if not city:
-        city = DEFAULTS['city']
+
+    # get customized weather
+    city = get_value_with_fallback("city")
     weather = get_weather(city)
-    return render_template(
-        'home.html',
+
+    # Create response object and add cookies
+    response = make_response(render_template("home.html",
         articles=articles,
-        weather=weather
-    )
+        weather=weather))
+    expires = datetime.datetime.now() + datetime.timedelta(days=365)
+    response.set_cookie("publication", publication, expires=expires)
+    response.set_cookie("city", city, expires=expires)
+
+    return response
+
+
+# Try to get user input first ...
+# - if no user input use cookie,
+# - if no cookie use defaults
+def get_value_with_fallback(key):
+    if request.args.get(key):
+        return request.args.get(key)
+    if request.cookies.get(key):
+        return request.cookies.get(key)
+    return DEFAULTS[key]
 
 
 def get_news(query):
