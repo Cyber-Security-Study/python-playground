@@ -11,10 +11,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="headlines.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="headlines.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/headlines/headlines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
+            <state relative-caret-position="861">
               <caret line="41" column="13" lean-forward="true" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
               <folding>
                 <element signature="e#58#73#0" expanded="true" />
@@ -23,11 +23,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="home.styl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/headlines/templates/home.styl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/headlines/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+            <state relative-caret-position="147">
+              <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/headlines/static/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -49,8 +69,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/headlines/templates/home.html" />
         <option value="$PROJECT_DIR$/headlines/headlines.py" />
+        <option value="$PROJECT_DIR$/headlines/static/main.styl" />
+        <option value="$PROJECT_DIR$/headlines/templates/home.html" />
+        <option value="$PROJECT_DIR$/headlines/templates/home.styl" />
       </list>
     </option>
   </component>
@@ -86,6 +108,12 @@
               <item name="flask-by-example" type="b2602c69:ProjectViewProjectNode" />
               <item name="flask-by-example" type="462c0819:PsiDirectoryNode" />
               <item name="headlines" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flask-by-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flask-by-example" type="462c0819:PsiDirectoryNode" />
+              <item name="headlines" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flask-by-example" type="b2602c69:ProjectViewProjectNode" />
@@ -199,9 +227,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/headlines/static/main.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/headlines/headlines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
+        <state relative-caret-position="861">
           <caret line="41" column="13" lean-forward="true" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
           <folding>
             <element signature="e#58#73#0" expanded="true" />
@@ -211,8 +247,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/headlines/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+        <state relative-caret-position="147">
+          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headlines/templates/home.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/headlines/static/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           <folding />
         </state>
       </provider>

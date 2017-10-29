@@ -1,3 +1,15 @@
+html {
+  font-family: "Helvetica";
+  background: #fff;
+}
+.hl {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ccc;
+}
+.hl-Header {
+  background: #b0c4de;
+}
 .hl-Article_Wrapper {
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
