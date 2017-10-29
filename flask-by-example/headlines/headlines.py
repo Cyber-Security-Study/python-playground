@@ -4,9 +4,10 @@
     Flask by example
 """
 
+import datetime
 import feedparser
 import requests
-from flask import Flask, render_template, request
+from flask import Flask, make_response, render_template, request
 
 app = Flask(__name__)
 
@@ -36,12 +37,14 @@ def home():
     if not city:
         city = DEFAULTS['city']
     weather = get_weather(city)
-    return render_template(
-        'home.html',
+    # Create response object and add cookies
+    response = make_response(render_template("home.html",
         articles=articles,
-        weather=weather
-    )
-
+        weather=weather))
+    expires = datetime.datetime.now() + datetime.timedelta(days=365)
+    response.set_cookie("publication", publication, expires=expires)
+    response.set_cookie("city", city, expires=expires)
+    return response
 
 def get_news(query):
     if not query or query.lower() not in RSS_FEEDS:
