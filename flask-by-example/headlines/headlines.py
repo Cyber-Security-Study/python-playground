@@ -27,16 +27,25 @@ DEFAULTS = {
 
 @app.route('/')
 def home():
-    # get customized headlines, based on user input or default
+    # get customized headlines:
+    # based on user input first ...
+    # - if no user input based on cookie,
+    # - if no cookie pull our defaults
     publication = request.args.get('publication')
     if not publication:
-        publication = DEFAULTS['publication']
+        publication = request.cookies.get("publication")
+        if not publication:
+            publication = DEFAULTS['publication']
+
     articles = get_news(publication)
+
     # get customized weather based on user input or default
     city = request.args.get('city')
     if not city:
         city = DEFAULTS['city']
+
     weather = get_weather(city)
+
     # Create response object and add cookies
     response = make_response(render_template("home.html",
         articles=articles,
@@ -44,7 +53,9 @@ def home():
     expires = datetime.datetime.now() + datetime.timedelta(days=365)
     response.set_cookie("publication", publication, expires=expires)
     response.set_cookie("city", city, expires=expires)
+
     return response
+
 
 def get_news(query):
     if not query or query.lower() not in RSS_FEEDS:
