@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Waiter caller</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+    </head>
+    <body>
+        {% include 'header.html' %}
+
+        {% block content %}{% endblock %}
+
+        {% include 'footer.html' %}
+    </body>
+</html>
