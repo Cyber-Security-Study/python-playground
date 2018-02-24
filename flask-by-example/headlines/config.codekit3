@@ -7,7 +7,7 @@
 		"uuidString": "1C5240DA-C3FB-4EBC-ACB5-923FDA10C92D"
 		}
 	],
-"creatorBuild": "26097",
+"creatorBuild": "26261",
 "files": {
 	"\/__pycache__": {
 		"ft": 65536,
@@ -645,6 +645,10 @@
 		"id-match": {
 			"active": 0,
 			"optionString": "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true}"
+			},
+		"implicit-arrow-linebreak": {
+			"active": 0,
+			"optionString": "'beside'"
 			},
 		"indent": {
 			"active": 0,
