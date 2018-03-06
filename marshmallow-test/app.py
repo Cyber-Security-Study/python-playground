@@ -12,9 +12,14 @@ class Person(object):
         return '{} is {} years old. Your email is {}'.format(self.name, self.age, self.email, self.location)
 
 
+def validate_age(age):
+    if age < 25:
+        return False
+
+
 class PersonSchema(Schema):
     name = fields.String()
-    age = fields.Integer()
+    age = fields.Integer(validate=validate_age)
     email = fields.Email()
     location = fields.String(required=True)
 
