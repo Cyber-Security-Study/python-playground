@@ -1,4 +1,4 @@
-from marshmallow import Schema, fields
+from marshmallow import Schema, fields, pprint
 
 
 class Person(object):
@@ -22,4 +22,6 @@ input_dict['age'] = input('How old are you? ')
 
 person = Person(name=input_dict['name'], age=input_dict['age'])
 
-print(person)
+schema = PersonSchema()
+result = schema.dump(person)
+pprint(result.data)
