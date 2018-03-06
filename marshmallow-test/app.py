@@ -2,17 +2,19 @@ from marshmallow import Schema, fields, pprint, post_load
 
 
 class Person(object):
-    def __init__(self, name, age):
+    def __init__(self, name, age, email):
         self.name = name
         self.age = age
+        self.email = email
 
     def __repr__(self):
-        return '{} is {} years old'.format(self.name, self.age)
+        return '{} is {} years old. Your email is {}'.format(self.name, self.age, self.email)
 
 
 class PersonSchema(Schema):
     name = fields.String()
     age = fields.Integer()
+    email = fields.Email()
 
     # Auto load the data into the
     # Person object. Unpack and use the
@@ -26,8 +28,9 @@ input_dict = {}
 
 input_dict['name'] = input('What is your name? ')
 input_dict['age'] = input('How old are you? ')
+input_dict['email'] = input('What\'s your email? ')
 
 schema = PersonSchema()
 result = schema.load(input_dict)
 
-pprint(result.data)
+pprint(result)
