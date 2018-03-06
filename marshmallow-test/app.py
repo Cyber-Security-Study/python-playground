@@ -1,4 +1,4 @@
-from marshmallow import Schema, fields, pprint, post_load
+from marshmallow import Schema, fields, pprint, post_load, ValidationError
 
 
 class Person(object):
@@ -9,12 +9,12 @@ class Person(object):
         self.location = location
 
     def __repr__(self):
-        return '{} is {} years old. Your email is {}'.format(self.name, self.age, self.email, self.location)
+        return '{} is {} years old, email is {}, location is {}'.format(self.name, self.age, self.email, self.location)
 
 
 def validate_age(age):
     if age < 25:
-        return False
+        raise ValidationError('You are too young!')
 
 
 class PersonSchema(Schema):
