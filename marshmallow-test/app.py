@@ -1,4 +1,4 @@
-from marshmallow import Schema, fields, pprint, post_load, ValidationError
+from marshmallow import Schema, fields, pprint, post_load, ValidationError, validates
 
 
 class Person(object):
@@ -12,14 +12,10 @@ class Person(object):
         return '{} is {} years old, email is {}, location is {}'.format(self.name, self.age, self.email, self.location)
 
 
-def validate_age(age):
-    if age < 25:
-        raise ValidationError('You are too young!')
-
 
 class PersonSchema(Schema):
     name = fields.String()
-    age = fields.Integer(validate=validate_age)
+    age = fields.Integer()
     email = fields.Email()
     location = fields.String(required=True)
 
@@ -29,6 +25,13 @@ class PersonSchema(Schema):
     @post_load
     def create_person(self, data):
         return Person(**data)
+
+    # Using a decorator to validate instead of
+    # an outside function
+    @validates('age')
+    def validate_age(self, age):
+        if age < 25:
+            raise ValidationError('Too young!')
 
 
 input_dict = {}
