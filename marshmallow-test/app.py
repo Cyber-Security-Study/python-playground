@@ -20,8 +20,8 @@ input_dict = {}
 input_dict['name'] = input('What is your name? ')
 input_dict['age'] = input('How old are you? ')
 
-person = Person(name=input_dict['name'], age=input_dict['age'])
-
 schema = PersonSchema()
-result = schema.dump(person)
+result = schema.load(input_dict)
+
 pprint(result.data)
+person =
