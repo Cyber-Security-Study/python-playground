@@ -1,4 +1,4 @@
-from marshmallow import Schema, fields, pprint
+from marshmallow import Schema, fields, pprint, post_load
 
 
 class Person(object):
@@ -14,6 +14,13 @@ class PersonSchema(Schema):
     name = fields.String()
     age = fields.Integer()
 
+    # Auto load the data into the
+    # Person object. Unpack and use the
+    # named variables as kwargs
+    @post_load
+    def create_person(self, data):
+        return Person(**data)
+
 
 input_dict = {}
 
@@ -24,4 +31,3 @@ schema = PersonSchema()
 result = schema.load(input_dict)
 
 pprint(result.data)
-person =
